@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心</title>
+		<link rel="stylesheet" href="/static/css/public.css" />
+		<link rel="stylesheet" href="/static/css/car.css" />
+		<script src='/static/js/jquery-1.12.4.js'></script>
+		<script src='/static/js/jquery.cookie.js'></script>
+		<script src='/static/js/car.js'></script>
+	</head>
+	<body>
+		<div id="head-wrap">
+			<div id="head">
+				<div class="head-left">
+					<span><a href="denglu.html">登录</a></span>
+					<span><a href="zhuce.html">注册</a></span>
+					<span class='tuichu'></span>
+				</div>
+				<div class="head-right">
+					<!--头部购物车-->
+					<dl class="head-nav head-car">
+						<!--统一件数为class名 number-->
+						<dt>购物车<span class='number'>0</span>件<p class='number' id = 'amount'>0</p></dt>
+						<dd class = 'head-car-downmenu'>
+							<p class = 'head-car-downmenu-tit'>最新加入商品</p>
+							<div class = 'head-car-downmenu-goods'></div>
+							<div class="head-car-downmenu-pay">
+								<p>共<span class='number'>0</span>种商品</p>
+								<input type="button" value = '结算购物车中的商品'/>
+							</div>
+						</dd>
+					</dl>
+					<!--/*-----------用户中心  我的订单  客户服务-------*/-->
+					<dl class="head-nav-ccc head-nav ">
+						<dt><a href="javascript:;">用户中心</a></dt>
+						<dd>
+							<ul>
+								<li><a href="javascript:;">商品收藏</a></li>
+								<li><a href="javascript:;">店铺收藏</a></li>
+								<li><a href="javascript:;">收藏米米乐</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="head-nav head-nav-ccc">
+						<dt><a href="javascript:;">我的订单</a></dt>
+						<dd>
+							<ul>
+								<li><a href="javascript:;">代付款订单</a></li>
+								<li><a href="javascript:;">待确认收货</a></li>
+								<li><a href="javascript:;">待评价交易</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="head-nav head-nav-ccc">
+						<dt><a href="javascript:;">客户服务</a></dt>
+						<dd>
+							<ul>
+								<li><a href="javascript:;">帮助中心</a></li>
+								<li><a href="javascript:;">售后服务</a></li>
+								<li><a href="javascript:;">客服中心</a></li>
+								<li><a href="javascript:;">在线客服</a></li>
+								<li><a href="javascript:;">QQ客服</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="head-nav head-nav-ccc head-web-nav">
+						<dt><a href="javascript:;">网站导航</a></dt>
+						<dd>
+							<ul>
+								<li><a href="javascript:;">导购频道</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<div class="car-main">
+			<div class="car-logo">
+				<a href='/static/index.html'><img src="/static/img/index/logo.png" alt="" /></a>
+			</div>
+			<div class="car-my">
+				<div class="car-my-tit">
+					<h3>我的信息</h3>
+				</div>
+				<form action="">
+                    {% csrf_token %}
+				<div class="car-my-goods">
+
+					<table>
+						<tr>
+							<td>头像</td>
+							<td><img src="/{{request.user.userinfo.header}}" style="width: 100px;height: 100px; border-radius: 50px;height: 100px;width: 100px;" ></td>
+						</tr>
+						<tr>
+							<td>账号</td>
+							<td>{{user.username}}</td>
+						</tr>
+						<tr>
+							<td>昵称</td>
+							<td>{{user.userinfo.nickname}}</td>
+						</tr>
+						<tr>
+							<td>年龄</td>
+							<td>{{user.userinfo.gender}}</td>
+						</tr>
+						<tr>
+							<td>电话</td>
+							<td>{{user.userinfo.phone}}</td>
+						</tr>
+					</table>
+				</div>
+				</form>
+			</div>
+		</div>
+
+
+
+
+		<div id="serve-wrap">
+			<div id="serve">
+				<div class="serve-left1">
+					<h4>购物指南</h4>
+					<ul>
+						<li><a href="javascript:;">礼品卡得购买和使用</a></li>
+						<li><a href="javascript:;">无法收到邮件?</a></li>
+						<li><a href="javascript:;">关于捷信分期</a></li>
+						<li><a href="javascript:;">邮费制度</a></li>
+						<li><a href="javascript:;">订单状态说明</a></li>
+					</ul>
+				</div>
+				<div class="serve-left1">
+					<h4>支付方式</h4>
+					<ul>
+						<li><a href="javascript:;">支付问题</a></li>
+						<li><a href="javascript:;">在线支付</a></li>
+						<li><a href="javascript:;">货到付款</a></li>
+						<li><a href="javascript:;">营销推广</a></li>
+					</ul>
+				</div>
+				<div class="serve-left1">
+					<h4>配送与服务</h4>
+					<ul>
+						<li><a href="javascript:;">申请售后退款说明</a></li>
+						<li><a href="javascript:;">取消订单退款说明</a></li>
+						<li><a href="javascript:;">装机与维修服务</a></li>
+						<li><a href="javascript:;">退换货流程</a></li>
+						<li><a href="javascript:;">第三方配送</a></li>
+					</ul>
+				</div>
+				<div class="serve-left1">
+					<h4>商家入驻</h4>
+					<ul>
+						<li><a href="javascript:;">小米鸽（兼职招商专员）</a></li>
+						<li><a href="javascript:;">广告位管理与流程申报</a></li>
+						<li><a href="javascript:;">活动组织与流程申报</a></li>
+						<li><a href="javascript:;">如何发货</a></li>
+						<li><a href="javascript:;">我要开店</a></li>
+					</ul>
+				</div>
+				<div class="contact">
+
+					<div class="serve-code">
+							<h4>关于米米乐商城</h4>
+							<img src="/static/img/index/scmmloo.png" alt="" />
+							<p>手机下单更优惠 快乐网购 轻松拥有</p>
+					</div>
+					<div class="contact-left">
+							<h4>客服中心</h4>
+							<p>4006-780-781</p>
+							<span>E-mail：mmloo@mmloo.com <br />四川省成都市新南路亚华大厦六楼</span>
+							<a href="javascript:;"><img src="/static/img/index/qq-index.gif" alt="" /><span>4006780781</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<p class='footer-link'>
+				<a href="javascript:;">电脑节</a> | <a href="javascript:;">年货节</a> | <a href="javascript:;">批发商城</a> |
+				<a href="javascript:;"> 合作及洽谈</a> | <a href="javascript:;"> 联系我们</a> | <a href="javascript:;">关于米米乐商城</a> |
+				<a href="javascript:;">  商家登录</a> | <a href="javascript:;">开店协议</a> | <a href="javascript:;">商家入驻</a> |
+				<a href="javascript:;">手机版</a> | <a href="javascript:;">友情链接</a> | <span><a href="javascript:;">招聘英才</a> | </span>
+				<a href="javascript:;">米商</a> | <a href="javascript:;">8.8包邮</a><br />
+				<span> &copy; 2016 米米乐商城 www.mmloo.com 版权所有 蜀ICP备06015925号-1</span>
+			</p>
+			<div class="huiding"><a href="javascript:;">返回顶部▲</a></div>
+			<div id="cxlogo"><img src="img/index/cxlogo.png" alt="" /></div>
+		</div>
+	</body>
+</html>

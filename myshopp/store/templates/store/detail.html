@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>店铺详情页面</title>
+        <script src="/static/js/lib/jquery/jquery-1.12.4.js"></script>
+    </head>
+    <body>
+        <h1>店铺详情页面</h1>
+        <table border="1">
+            <tr>
+                <td>店铺封面</td>
+                <td><img style="height: 50px;" src="/{{store.cover}}" alt=""></td>
+            </tr>
+            <tr>
+                <td>店铺名称</td>
+                <td>{{store.name}}</td>
+            </tr>
+            <tr>
+                <td>状态</td>
+                <td>
+                    {% if store.status == 0%}
+                        <p>正在营业</p>
+                        <a href="{% url 'store:change' store.id 1 %}">暂停营业</a>
+                        <a href="{% url 'store:change' store.id 2 %}">删除店铺</a>
+                    {% elif store.status == 1 %}
+                        <p>暂停营业</p>
+                        <a href="{% url 'store:change' store.id 0 %}">开始营业</a>
+                        <a href="{% url 'store:change' store.id 2 %}">删除店铺</a>
+                     {% elif store.status == 2 %}
+                        <p>店铺已经删除，请联系管理员</p>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>操作</td>
+                <td>
+                    <a href="{% url 'store:update' store.id %}">修改店铺信息</a>
+                    <a href="{% url 'goods:add' store.id %}">上架商品</a>
+                </td>
+            </tr>
+        </table>
+        <hr>
+
+        <hr>
+        <!--<form action="" method="post">-->
+            <!--{% csrf_token %}-->
+            <!--商品名称：<input type="text"name="name" id="name"><br>-->
+            <!--商品单价：<input type="number" name="price"><br>-->
+            <!--商品库存：<input type="number" name="stock">-->
+            <!--<input type="hidden" name="store" value="{{store.id}}">-->
+            <!--商品图片: <input type="file" name="cover"><button>继续添加</button>-->
+            <!--商品类型：<select name="typee" id="type1">-->
+                         <!--<option value="-1">请选择一级类型</option>-->
+                        <!--{% for s in type1 %}-->
+                        <!--<option value="{{s.id}}">{{s.name}}</option>-->
+                        <!--{% endfor%}-->
+                    <!--</select>-->
+                    <!--<select name="typee" id="type2">-->
+                        <!--<option value=""></option>-->
+                    <!--</select>-->
+            <!--商品介绍：<textarea name="intro" id="" cols="30" rows="10"></textarea>-->
+            <!---->
+        <!--</form>-->
+
+        {% for g in goods %}
+        <img src="/{{g.goodsimage_set.all.first.path}}" alt="">
+        ===============商品名：{{g.name}}=======商品单价：{{g.price}}=====库存：{{g.stock}}<br>
+        <a href="{% url 'goods:detail' g.id %}">查看商品详情</a><br>
+        {% empty %}
+            当前商店没有上架商品
+        {% endfor%}
+
+    </body>
+</html>

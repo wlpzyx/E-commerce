@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}
+个人信息
+{% endblock %}
+{% load static %}
+{% block head %}
+<link type="text/css" href="{% static 'pc/www/css/myCenter.css' %}"
+      rel="stylesheet"/>
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<script src="js/jquery_1.9.js"></script>
+<script src="js/bootstrap.js"></script>
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'pc/www/css/home.css' %}?v=biyao_b551ce1"/>
+<link rel="stylesheet" href="{% static 'files/data0/minisite/9326b81b7e1d4336a3686fbca469fc72/pc/css/special_style.css' %}">
+<style>
+    .index_bg_fff{background-color:#fff;}
+</style>
+<div class="w1200 auto mg_t10">
+    <div class="pos_nav">
+        <div class="zt_navigation">
+            <span class="inline mg_l15">家居</span>
+            <span class="inline mg_l15">></span>
+            <a class="inline last" href="#001">{{type_obj.gt_name}}</a>
+        </div>
+    </div>
+    <div name="001" id="001">
+        <div class="banner_con">
+                <div class="row">
+                    {% for i in type_obj.goods_set.all %}
+                    <div class="col-xs-3">
+
+                            {% for img in i.goodsimage_set.all %}
+                                {% if img.status %}
+                                    <a href="{% url 'goods:details_goods' i.id %}">
+                                        <img class="img-rounded" src="/{{img.path}}" style="width:300px; height:300px" alt="">
+                                    </a>
+                        {% endif %}
+                            {% endfor %}
+                                <table border="0" cellspacing="0" cellpadding="0" style="width:300px" class="perTableTitle1">
+                                    <tbody>
+                                    <tr>
+                                        <td width="50%">店铺名:{{i.name}}</td>
+                                        <td width="50%">单价:{{i.price}}￥</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+    </div>
+</div>
+{% endblock %}

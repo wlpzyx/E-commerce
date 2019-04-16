@@ -1,0 +1,328 @@
+.car-main{
+	margin: 0 auto;
+	width: 1000px;
+	height: 500px;
+}
+.car-logo{
+	height: 100px;
+	width: 1000px;
+	border-bottom: 1px solid #ddd;
+}
+.car-my{
+	height: 500px;
+	width: 1000px;
+}
+.car-my-tit{
+	width: 1000px;
+	height: 80px;
+}
+.car-my-tit h3{
+	height: 50px;
+	line-height: 50px;
+	font-size: 26px;
+	color: #555555;
+}
+.car-my-tit p{
+	color: #aaaaaa;
+}
+.car-my-goods{
+	width: 898px;
+	height: 500px;
+}
+.car-my-goods .goods-onerow{
+	color: #aaaaaa;
+	height: 36px;
+	width: 998px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-top: 2px solid #aaa;
+	background: #f9f9f9;
+}
+.car-my-goods .goods-onerow .choose{
+	width: 50px;
+	height: 36px;
+	float: left;
+	text-align: center;
+	line-height: 36px;
+}
+.car-my-goods .goods-onerow .choose i{
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: url(../img/car/nochoose.jpg);
+}
+.car-my-goods .goods-onerow .car-my-goods-list{
+	float: left;
+	height: 36px;
+	width: 491px;
+	text-align: center;
+	line-height: 36px;
+}
+.car-my-goods .goods-onerow .car-my-oneprice{
+	width: 163px;
+	height: 36px;
+	float: left;
+	text-align: center;
+	line-height: 36px;
+}
+.car-my-goods .goods-onerow .car-my-number{
+	width: 70px;
+	height: 36px;
+	float: left;
+	text-align: center;
+	line-height: 36px;
+}
+.car-my-goods .goods-onerow .car-my-xiaoji{
+	width: 169px;
+	height: 36px;
+	float: left;
+	text-align: center;
+	line-height: 36px;
+}
+.car-my-goods .goods-onerow .car-my-caozuo{
+	width: 55px;
+	height: 36px;
+	float: left;
+	text-align: center;
+	line-height: 36px;
+}
+.goods-tworow{
+	width: 998px;
+	height: 36px;
+	background: #daf0fe;
+	line-height: 36px;
+	text-indent: 20px;
+	color: #333333;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+.car-my-goods .goods-threerow{
+	color: #aaaaaa;
+	height: 58px;
+	width: 998px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background: #fffdee;
+}
+.car-my-goods .goods-threerow .choose{
+	width: 50px;
+	height: 58px;
+	float: left;
+	text-align: center;
+	line-height: 58px;
+}
+.car-my-goods .goods-threerow .choose i{
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: url(../img/car/nochoose.jpg);
+}
+.car-my-goods .goods-threerow .car-my-goods-list{
+	float: left;
+	height: 58px;
+	width: 491px;
+	text-align: left;
+	line-height: 58px;
+}
+.car-my-goods .goods-threerow .car-my-goods-list img{
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin-top: 10px;
+}
+.car-my-goods .goods-threerow .car-my-goods-list span{
+	float: left;
+	margin-left: 10px;
+}
+.car-my-goods .goods-threerow .car-my-oneprice{
+	width: 163px;
+	height: 58px;
+	float: left;
+	text-align: center;
+	line-height: 58px;
+}
+.car-my-goods .goods-threerow .car-my-number{
+	width: 70px;
+	height: 58px;
+	float: left;
+	text-align: center;
+	line-height: 58px;
+}
+.car-my-goods .goods-threerow .car-my-number a{
+	float: left;
+	width: 14px;
+	height: 14px;
+	border: 1px solid #ddd; 
+	margin-top: 21px;
+	line-height: 14px;
+}
+.car-my-goods .goods-threerow .car-my-number p{
+	float: left;
+	width: 28px;
+	height: 24px;
+	border: 1px solid #ddd; 
+	line-height: 24px;
+	margin: 16px 2px 0;
+}
+.car-my-goods .goods-threerow .car-my-xiaoji{
+	width: 169px;
+	height: 58px;
+	float: left;
+	text-align: center;
+	line-height: 58px;
+}
+.car-my-goods .goods-threerow .car-my-caozuo{
+	width: 55px;
+	height: 58px;
+	float: left;
+	text-align: center;
+	line-height: 58px;
+}
+.car-my-goods .goods-fourrow{
+	color: #aaaaaa;
+	height: 58px;
+	width: 998px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+}
+.goods-fiverow{
+	height: 58px;
+	width: 1000px;
+}
+.goods-fiverow a{
+	width:200px;
+	height: 30px;
+	text-align: center;
+	display: block;
+	float: right;
+	background: green;
+	border-radius: 5px;
+	line-height: 30px;
+	font-size: 18px;
+	color: white;
+	margin-top: 10px;
+}
+/*------------serve-----------*/
+#serve-wrap{
+	height: 230px;
+	background: #fafafa;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+}
+#serve{
+	height: 100%;
+	padding-left: 2px;
+}
+.serve-left1{
+	width: 162px;
+	margin-right: 18px;
+	float: left;
+}
+.serve-left1 h4{
+	font-size: 16px;
+	color: #7d667d;
+	height: 46px;
+	border-bottom: 1px solid #dddddd;
+	line-height: 56px;
+	text-indent: 2px;
+}
+.serve-left1 ul{
+	list-style-type: square;
+	list-style-position: inside;
+}
+.serve-left1 ul li{
+	padding-left: 2px;
+	margin-top: 6px;
+}
+.contact{
+	background: #ffffff;
+	float: right;
+	width: 409px;
+	padding-top: 6px;
+	border-left: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+}
+
+.serve-code{
+	float: right;
+	width: 137px;
+	height: 223px;
+	border-left: 1px solid #dddddd;
+	text-align: center;
+}
+.serve-code h4{
+	height: 39px;
+	width: 123px;
+	margin: 0 auto;
+	border-bottom: 1px solid #dddddd;
+	text-align: center;
+	font-size: 16px;
+	line-height: 39px;
+	color: #888888;
+}
+.serve-code img{
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+}
+.serve-code p{
+	margin: 0 auto;
+	width: 113px;
+	height: 80px;
+	font-size: 16px;
+	color: #888888;
+	border-bottom: 1px solid #dddddd;
+}
+.contact-left{
+	float: right;
+	width: 271px;
+	height: 223.5px;
+}
+.contact-left h4{
+	height: 39px;
+	width: 243px;
+	margin: 0 auto;
+	border-bottom: 1px solid #dddddd;
+	text-align: center;
+	font-size: 16px;
+	line-height: 39px;
+	color: #888888;
+}
+.contact-left p{
+	height: 32px;
+	padding-left: 47px;
+	font-size: 22px;
+	color: #ff7900;
+	line-height: 40px;
+	font-family: microsoft yahei;
+	background: url(../img/index/phone-number.jpg) no-repeat left top;
+}
+.contact-left span{
+	padding-left: 20px;
+	height: 52px;
+	display: block;
+	color: #666666;
+}
+.contact-left a{
+	padding-left: 20px;
+	line-height: 10px;
+	display: block;
+	height: 20px;
+	
+}
+.contact-left a img{
+	float: left;
+	width: 23px;
+}
+.contact-left a span{
+	float: left;
+	width: 50px;
+	line-height: 20px;
+	padding-left: 10px;
+	color:#231816;
+	height: 20px;
+}

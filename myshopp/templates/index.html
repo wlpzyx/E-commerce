@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>MMLOO【米米乐】企业采购批发平台，知名B2B电子商务平台网站！</title>
+		<link rel="stylesheet" href="static/css/public.css" />
+		<link rel="stylesheet" href="static/css/alone.css" />
+		<script src='static/js/jquery-1.12.4.js'></script>
+		<script src='static/js/index.js'></script>
+		<script src='static/js/jquery.SuperSlide.2.1.1.js'></script>
+		<script src='static/js/jquery.cookie.js'></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			.type2{
+			    display: none;
+			}
+            .layer {
+                width: 1360px;
+                height: 500px;
+            }
+            .goods {
+                width: 250px;
+                height: 400px;
+                border: 1px solid #CCCCCC;
+                margin: 5px;
+                border-radius: 3px;
+                float: left;
+            }
+             .goods > .good-img > img {
+                 width: 250px;
+                 height: 280px;
+             }
+		</style>
+	</head>
+	<body>
+		<div id="head-wrap">
+			<div id="head">
+				<div class="head-left">
+					<a href="{% url 'users:register' %}" target="_top" style="text-decoration: none;color: red;">免费注册</a>
+					<a href="{% url 'users:user_login' %}" style="text-decoration: none;color: red;">亲，请登录</a>
+					<span class='tuichu'></span>
+				</div>
+				<div class="head-right">
+					<!--头部购物车-->
+					<dl class="head-nav head-car">
+						<!--统一件数为class名 number-->
+						<dt> <a id="mc-menu-hb" href="{% url 'shopcart:list'%}" target="_top" style="text-decoration: none;">购物车</a><span class='number'>0</span>件<p class='number' id = 'amount'>0</p></dt>
+						<dd class = 'head-car-downmenu'>
+							<p class = 'head-car-downmenu-tit'>最新加入商品</p>
+							<div class = 'head-car-downmenu-goods'></div>
+							<div class="head-car-downmenu-pay">
+								<p>共<span class='number'>0</span>种商品</p>
+								<input type="button" value = '结算购物车中的商品'/>
+							</div>
+						</dd>
+					</dl>
+					<dl class="head-nav-ccc head-nav ">
+						 <a href="{% url 'store:add' %}" style="text-decoration: none;">开店</a>
+
+					</dl>
+					<!--/*-----------用户中心  我的订单  客户服务-------*/-->
+					<dl class="head-nav-ccc head-nav ">
+						<dt><a href="javascript:;">用户中心</a></dt>
+						<dd>
+							<ul>
+								<li><a href="{% url 'users:userinfo' %}" style="text-decoration: none;">个人信息</a></li>
+								<li><a href="javascript:;">商品收藏</a></li>
+								<li><a href="{% url 'store:list' %}" style="text-decoration: none;">我的店铺</a></li>
+								<li><a href="javascript:;">收藏米米乐</a></li>
+								<li><a href="{% url 'users:user_logout' %}" style="text-decoration: none;">退出</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="head-nav head-nav-ccc">
+						<dt><a href="javascript:;">我的订单</a></dt>
+						<dd>
+							<ul>
+								<li><a href="javascript:;">代付款订单</a></li>
+								<li><a href="javascript:;">待确认收货</a></li>
+								<li><a href="javascript:;">待评价交易</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="head-nav head-nav-ccc">
+						<dt><a href="javascript:;">客户服务</a></dt>
+						<dd>
+							<ul>
+								<li><a href="javascript:;">帮助中心</a></li>
+								<li><a href="javascript:;">售后服务</a></li>
+								<li><a href="javascript:;">客服中心</a></li>
+								<li><a href="javascript:;">在线客服</a></li>
+								<li><a href="javascript:;">QQ客服</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="head-nav head-nav-ccc head-web-nav">
+						<dt><a href="javascript:;">网站导航</a></dt>
+						<dd>
+							<ul>
+								<li><a href="javascript:;">导购频道</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<!--------头部广告--------->
+		<div id="message-wrap">
+			<a href="javascript:;"></a>
+		</div>
+		<!--------导航栏---------->
+		<div class="nav-wrap">
+			<div id="nav">
+				<div class='nav-up'>
+					<div id="logo">
+						<a href="javascript:;">
+							<img src="static/img/index/logo.png" alt="米米乐" title='米米乐'/>
+						</a>
+					</div>
+					<div class="nav-search">
+						<form action="" class="search">
+							<input type="text" class="searchtxt" id='atxt' value='' placeholder="搜索 澳唯 试试^.^"/>
+							<a href='html/searchlist.html' class='searchbtn' >搜索</a>
+							<ul id='list' class="search-xia">
+								<li><a href="html/seachlist.html">充电线</a></li>
+
+							</ul>
+						</form>
+						<p>
+							<a class='search-recommend' href="">iPhone 7预定</a><a class='search-recommend' href="">台湾美食</a><a class='search-recommend' href="">8.8包邮</a><a class='search-recommend' href="">中秋</a><a href="">魅蓝</a><a href="">iPhone 6</a><a href="">酒饮</a>
+						</p>
+					</div>
+
+					<ul class="nav-need">
+						<li>
+							<a href="javascript:;"><img src="static/img/index/nav-need1.jpg"/></a>
+							<a class='nav-need-txt' href="javascript:;">认证包邮</a>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="static/img/index/nav-need2.jpg"/></a>
+							<a class='nav-need-txt' href="javascript:;">招商加盟</a>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="static/img/index/nav-need3.jpg"/></a>
+							<a class='nav-need-txt' href="javascript:;">需求发布</a>
+						</li>
+					</ul>
+				</div>
+				<div class="nav-down">
+					<div class="nav-down1"><a href="javascript:;">所有商品分类</a></div>
+					<ul class="nav-nav">
+						<li class="nav-nav1"><a href="javascript:;">首页</a></li>
+						<li><a href="javascript:;">米活动</a></li>
+						<li><a href="javascript:;">乐社区</a></li>
+						<li><a href="javascript:;">商家入驻</a></li>
+						<li><a href="javascript:;">8.8天天抢</a></li>
+						<li><a href="javascript:;">团购</a></li>
+						<li><a href="javascript:;">米金融</a></li>
+					</ul>
+					<img src="static/img/index/nav-down2.jpg" />
+				</div>
+			</div>
+
+		</div>
+		<div id="banner-wrap">
+				<div id="banner">
+					<ul class="bannde-nav">
+						{% for type in allGoodTypes %}
+							<li>{{type.name}}</li>
+							<ul class="type2">
+								{% for type2 in type.goodstype_set.all %}
+								<li>{{type2.name}}</li>
+								{% endfor %}
+							</ul>
+
+						{% empty %}
+						<p>当前没有商品类型</p>
+					</ul>
+					{% endfor %}
+					<!-------------banner轮播---------------------------->
+
+					<!------------------------轮播结束-------------------------->
+
+				</div>
+				<div class="slideBox">
+						<div id="slideBox" class="hd">
+							<ul>
+								<li><a href="javascript:;">台湾美食7.5折</a></li>
+								<li><a href="javascript:;">联想AIO300</a></li>
+								<li><a href="javascript:;">品胜专场低至6元</a></li>
+								<li><a href="javascript:;">礼遇中秋</a></li>
+								<li><a href="javascript:;">温润养身</a></li>
+								<li><a href="javascript:;">oa办公全场1元起</a></li>
+							</ul>
+						</div>
+						<div class="bd">
+							<ul>
+								<li><a href="javascript:;"><img src="static/img/index/banner-center-1.jpg" /></a></li>
+								<li><a href="javascript:;"><img src="static/img/index/banner-center-2.jpg" /></a></li>
+								<li><a href="javascript:;"><img src="static/img/index/banner-center-3.jpg" /></a></li>
+								<li><a href="javascript:;"><img src="static/img/index/banner-center-4.jpg" /></a></li>
+								<li><a href="javascript:;"><img src="static/img/index/banner-center-5.jpg" /></a></li>
+								<li><a href="javascript:;"><img src="static/img/index/banner-center-6.jpg" /></a></li>
+							</ul>
+						</div>
+
+						<!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+						<a class="prev" href="javascript:void(0)"><</a>
+						<a class="next" href="javascript:void(0)">></a>
+
+					</div>
+				<div class="banner-right">
+						<div class="banner-right-tit">
+							<p class="banner-person"> Hi,您好<br /><span>欢迎来到米米乐商城</span></p>
+							<a class="banner-right-tit1" href="{% url 'users:user_login' %}" style="text-decoration: none;">登录</a><a href="{% url 'users:register' %}" target="_top" style="text-decoration: none;">注册</a>
+						</div>
+						<p class="banner-right-inform"><a href="javascript:;" title='【通知】签到红包活动取消'>【通知】签到红包活动取消</a><span>(2016-08-31)</span></p>
+						<p class="banner-right-inform banner-right-inform1"><a href="javascript:;" title='【立减】iPhone7不加价预售'>【立减】iPhone7不加价预</a><span id='cao'>(2016-08-16)</span></p>
+						<ul class="banner-serve">
+							<li>
+								<a href="javascript:;">
+									<img src="static/img/index/banner-serve1.jpg" />
+									<p>话费</p>
+								</a>
+							</li>
+							<li class="banner-serve1">
+								<a href="javascript:;">
+									<img src="static/img/index/banner-serve2.jpg" />
+									<p>机票</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="static/img/index/banner-serve3.jpg" />
+									<p>礼品卡</p>
+								</a>
+							</li>
+						</ul>
+						<a href="javascript:;"><img  style='width:229px;height:141px;' src="static/img/index/banner-right-bottom.jpg" /></a>
+					</div>
+				<div class="layer">
+					<h4>点心/蛋糕</h4>
+				{% for goods in goods1_list %}
+					<div class="goods">
+						<div class="good-img">
+							<img src="/{{goods.goodsimage_set.all.first.path}}" alt="">
+						</div>
+						<div class="goods-name">
+							{{goods.name}}| {{goods.goodstype.name}}==> {{goods.goodstype.parent.name}}
+						</div>
+						<div class="goods-name">
+							{{goods.intro}}
+						</div>
+						<div class="goods-price">
+							单价{{goods.price}}|销量：{{goods.count}}
+						</div>
+						<div class="goods-sale">
+							<a href="{% url 'goods:detail' goods.id %}">商品详情</a>
+							<!--<button class="addGoods" goods_id="{{goods.id }}">添加购物车</button>-->
+							<!--<input type="hidden" name="{{goods.id }}" id="goods_id">-->
+							<button class="addGoods" goods_id="{{goods.id }}">添加购物车</button>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+				<hr>
+
+				<div class="layer">
+					<h4>鞋靴 / 箱包 / 配件</h4>
+				{% for goods in goods2_list %}
+					<div class="goods">
+						<div class="good-img">
+							<img src="/{{goods.goodsimage_set.all.first.path}}" alt="">
+						</div>
+						<div class="goods-name">
+							{{goods.name}}| {{goods.goodstype.name}}==> {{goods.goodstype.parent.name}}
+						</div>
+						<div class="goods-name">
+							{{goods.intro}}
+						</div>
+						<div class="goods-price">
+							单价{{goods.price}}|销量：{{goods.count}}
+						</div>
+						<div class="goods-sale">
+							<a href="{% url 'goods:detail' goods.id %}">商品详情</a>
+							<button class="addGoods" goods_id="{{goods.id }}">添加购物车</button>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+				<hr>
+
+				<div class="layer">
+					<h4>童装玩具 / 孕产 / 用品</h4>
+				{% for goods in goods3_list %}
+					<div class="goods">
+						<div class="good-img">
+							<img src="/{{goods.goodsimage_set.all.first.path}}" alt="">
+						</div>
+						<div class="goods-name">
+							{{goods.name}}| {{goods.goodstype.name}}==> {{goods.goodstype.parent.name}}
+						</div>
+						<div class="goods-name">
+							{{goods.intro}}
+						</div>
+						<div class="goods-price">
+							单价{{goods.price}}|销量：{{goods.count}}
+						</div>
+						<div class="goods-sale">
+							<a href="{% url 'goods:detail' goods.id %}">商品详情</a>
+							<button class="addGoods" goods_id="{{goods.id }}">添加购物车</button>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+				<hr>
+				<div class="layer">
+					<h4>家电 / 数码 / 手机</h4>
+					{% for goods in goods4_list %}
+					<div class="goods">
+						<div class="good-img">
+							<img src="/{{goods.goodsimage_set.all.first.path}}" alt="">
+						</div>
+						<div class="goods-name">
+							{{goods.name}}| {{goods.goodstype.name}}==> {{goods.goodstype.parent.name}}
+						</div>
+						<div class="goods-name">
+							{{goods.intro}}
+						</div>
+						<div class="goods-price">
+							单价{{goods.price}}|销量：{{goods.count}}
+						</div>
+						<div class="goods-sale">
+							<a href="{% url 'goods:detail' goods.id %}">商品详情</a>
+							<button class="addGoods" goods_id="{{goods.id }}">添加购物车</button>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+				<hr>
+
+				 <div class="layer">
+					<h4>美妆 / 洗护 / 保健品</h4>
+					{% for goods in goods5_list %}
+					<div class="goods">
+						<div class="good-img">
+							<img src="/{{goods.goodsimage_set.all.first.path}}" alt="">
+						</div>
+						<div class="goods-name">
+							{{goods.name}}| {{goods.goodstype.name}}==> {{goods.goodstype.parent.name}}
+						</div>
+						<div class="goods-name">
+							{{goods.intro}}
+						</div>
+						<div class="goods-price">
+							单价{{goods.price}}|销量：{{goods.count}}
+						</div>
+						<div class="goods-sale">
+							<a href="{% url 'goods:detail' goods.id %}">商品详情</a>
+							<button class="addGoods" goods_id="{{goods.id }}">添加购物车</button>
+						</div>
+					</DIV>
+					{% endfor %}
+				</div>
+				<hr>
+				<div class="layer">
+					<h4>珠宝 / 眼镜 / 手表</h4>
+					{% for goods in goods6_list %}
+					<div class="goods">
+						<div class="good-img">
+							<img src="/{{goods.goodsimage_set.all.first.path}}" alt="">
+						</div>
+						<div class="goods-name">
+							{{goods.name}}| {{goods.goodstype.name}}==> {{goods.goodstype.parent.name}}
+						</div>
+						<div class="goods-name">
+							{{goods.intro}}
+						</div>
+						<div class="goods-price">
+							单价{{goods.price}}|销量：{{goods.count}}
+						</div>
+						<div class="goods-sale">
+							<a href="{% url 'goods:detail' goods.id %}">商品详情</a>
+							<button class="addGoods" goods_id="{{goods.id }}">添加购物车</button>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+		<div style="height:3000px;"></div>
+		<hr>
+		<div id="link">
+			<a href="javascript:;">网上商城</a><a href="javascript:;">免费新信息发布</a><a href="javascript:;">客栈网</a>
+			<a href="javascript:;">乐天代购</a><a href="javascript:;"> 蛋糕网</a><a href="javascript:;">上订购</a>
+			<a href="javascript:;">吃喝玩乐</a><a href="javascript:;">网上数码商城</a><a href="javascript:;">1688批发网</a>
+			<a href="javascript:;">深圳童装批发</a><a href="javascript:;">中国皮革网</a><a href="javascript:;">户外装备</a>
+			<a href="javascript:;">饰品批发</a><a href="javascript:;">惠爱你</a><a href="javascript:;">网上订花</a>
+			<a href="javascript:;">美容加盟</a><a href="javascript:;">户外用品</a><a href="javascript:;">外贸童装批发网</a>
+			<a href="javascript:;">礼品册</a><a href="javascript:;">促销活动</a><a href="javascript:;">舒华跑步机</a>
+			<a href="javascript:;">冰柜</a><a href="javascript:;">制造资源</a><a href="javascript:;">整体衣柜</a>
+			<a href="javascript:;">仪器仪表世界网</a><a href="javascript:;">LED</a><a href="javascript:;">51电子网</a>
+			<a href="javascript:;">中国供应商</a><a href="javascript:;">十大品牌</a><a href="javascript:;">触摸屏网与液晶网</a>
+			<a href="javascript:;">洛阳分类信息</a><a href="javascript:;">千金商务网</a><a href="javascript:;">牛商网</a>
+			<a href="javascript:;">大连房产网</a><a href="javascript:;">洁具</a><a href="javascript:;">白酒代理</a>
+			<a href="javascript:;">百川网</a><a href="javascript:;">常州租房</a><a href="javascript:;">石家庄房产网</a>
+			<a href="javascript:;">1688货源网</a><a href="javascript:;">酒价格</a><a href="javascript:;">童装代理</a>
+			<a href="javascript:;">内增高鞋</a><a href="javascript:;">珠宝店加盟</a><a href="javascript:;">砭石</a>
+			<a href="javascript:;">拼客网</a><a href="javascript:;">微商代理货源网</a><a href="javascript:;">别墅图片大全</a>
+			<a href="javascript:;">隐形眼镜</a><a href="javascript:;">中国环保设备网</a><a href="javascript:;">化妆品代理网</a>
+			<a href="javascript:;">商祺网</a><a href="javascript:;">迅收网</a><a href="javascript:;">兼职网</a>
+			<a href="javascript:;">连锁加盟网</a><a href="javascript:;">楚天运动频道</a>
+		</div>
+		<div id="footer">
+			<p class='footer-link'>
+				<a href="javascript:;">电脑节</a> | <a href="javascript:;">年货节</a> | <a href="javascript:;">批发商城</a> |
+				<a href="javascript:;"> 合作及洽谈</a> | <a href="javascript:;"> 联系我们</a> | <a href="javascript:;">关于米米乐商城</a> |
+				<a href="javascript:;">  商家登录</a> | <a href="javascript:;">开店协议</a> | <a href="javascript:;">商家入驻</a> |
+				<a href="javascript:;">手机版</a> | <a href="javascript:;">友情链接</a> | <span><a href="javascript:;">招聘英才</a> | </span>
+				<a href="javascript:;">米商</a> | <a href="javascript:;">8.8包邮</a><br />
+				<span> &copy; 2016 米米乐商城 www.mmloo.com 版权所有 蜀ICP备06015925号-1</span>
+			</p>
+			<div class="huiding"><a href="static/javascript:;">返回顶部▲</a></div>
+			<div id="cxlogo"><img src="static/img/index/cxlogo.png" alt="" /></div>
+		</div>
+		<!------------------------侧边栏---------->
+		<div id="sidebar">
+			<!--客服-->
+				<div class="siderbar-hover">
+					<div class='serviceshow siderbar-show'><a href="javascript:;">联系客服</a></div>
+					<a href="javascript:;"><img src="static/img/index/sidebar-service.png" alt="" /></a>
+
+				</div>
+			<!--购物车-->
+				<div class="siderbar-hover">
+					<a href="javascript:;"><img src="static/img/index/sidebar-car.png" alt="" /></a>
+					<div class='serviceshow siderbar-show'><a href="html/car.html">前往购物车~~</a></div>
+				</div>
+			<!--足迹-->
+				<div class="siderbar-hover">
+					<a href="javascript:;"><img src="static/img/index/sidebar-history.png" alt="" /></a>
+					<div class='serviceshow siderbar-show'><a href="javascript:;">查看历史足迹</a></div>
+				</div>
+			<!--二维码-->
+				<div class="siderbar-hover">
+					<a href="javascript:;"><img src="static/img/index/sidebar-code.png" alt="" /></a>
+					<div class='codeshow siderbar-show'><img src="static/img/index/sidebar-code-pic.png" alt="" /></div>
+				</div>
+			<!--TOP-->
+				<div class="siderbar-hover siderbar-code">
+					<a href="javascript:;"><img src="static/img/index/sidebar-top.png" alt="" /></a>
+					<div class='topshow siderbar-show'><a href="javascript:;">返回顶部</a></div>
+				</div>
+		</div>
+		<ul id="floorsider">
+			<li><a class='tofirst' href="javascript:;">1F</a></li>
+			<li><a class='tosecond' href="javascript:;">2F</a></li>
+			<li><a class='tothird' href="javascript:;">3F</a></li>
+			<li><a class='tofouth' href="javascript:;">4F</a></li>
+		</ul>
+		<script>
+			var	txt = document.getElementById('atxt');
+			var	list = document.getElementById('list');
+
+			txt.oninput = txt.onpropertychange = function () {
+				console.log(1);
+					list.style.display= 'block';
+					var oScript = document.createElement('script');
+					oScript.src = 'http://search.mi.com/search/expand?keyword=' + this.value + '&jsonpcallback=callback';
+					document.body.appendChild(oScript);
+					document.body.removeChild(oScript);
+				}
+
+
+			function callback(oData) {
+				var sHtml = '';
+				for(var i =0; i < oData.length; i++) {
+					sHtml+='<li>'+oData[i]['Key']+oData[i]['Rst']+'</li>'
+				}
+				list.innerHTML = sHtml;
+			}
+
+			 $(function () {
+
+               $(".addGoods").click(function () {
+                   var $goods_id = $(this).attr("goods_id")
+                   $.ajax({
+                       url : "/shopcart/1/"+ $goods_id +"/add/",
+                       type : "get",
+                       success : function (msg) {
+                           alert(msg)
+                       },
+                       error : function (info) {
+                           alert("添加失败，请重新添加")
+                       },
+                   })
+               });
+            });
+		</script>
+	</body>
+</html>

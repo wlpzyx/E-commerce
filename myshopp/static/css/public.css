@@ -1,0 +1,347 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; } 
+fieldset, img { border:none; } 
+img{display: block;} 
+address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; } 
+ul, ol { list-style:none; } 
+body { color:#333;font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA; background:#fff;/* overflow-y:scroll;*/ overflow-x:hidden;}
+a { color:#666; text-decoration:none; }
+
+/*-------公共样式-------------*/
+#head, #nav, #banner, #main, #recommend, #serve, #link, #footer{
+	width: 1200px;
+	margin: 0 auto;
+}
+#head-wrap{
+	height: 31px;
+	background: #f8f8f8;
+}
+#head{
+	height: 28px;
+}
+.head-left{
+	float: left;
+	width: 400px;
+}
+.head-left span{
+	line-height: 28px;
+	margin-left: 20px;
+}
+.head-left span a:hover{
+	text-decoration: underline;
+}
+.head-right{
+	float: right;
+	width: 471px;
+}
+.head-nav{
+	float: left;
+	width: 80px;
+	line-height:28px;
+	border:1px solid #f8f8f8;
+	border-bottom: 0;
+}
+.head-nav dd ul li a:hover{
+	color: red;
+}
+.head-nav dt:hover a{
+	color:red;
+}
+/*-----------头部购物车*/
+.head-car{
+	position: relative;
+	width: 120px;
+	background:#f8f8f8;
+	text-indent: 23px;
+	cursor: pointer;
+	background: url(../img/index/head-car1.jpg) no-repeat;
+}
+/*----------头部购物车件数*/
+#amount{
+	width: 15px;
+	position: absolute;
+	top: -6px;
+	left: -9px;
+	color: #fff;
+}
+.head-car span{
+	margin: 0 4px;
+	color: #dd003a;
+}
+/*-------头部购物车下拉菜单------------*/
+.head-car-downmenu{
+	position: absolute;
+	left: -11px;
+	top: 28px;
+	height: 179px;
+	width: 348px;
+	background: white;
+	display: none;
+	border-top: 1px solid #dddddd;
+}
+.head-car-downmenu-tit{
+	height: 42px;
+	width: 348px;
+	color: #777777;
+	line-height: 42px;
+	font-weight: 900;
+	border-bottom: 1px solid #dddddd;
+}
+.head-car-downmenu-goods{
+	height: 67px;
+	background: url(../img/index/loading.gif) no-repeat center center;
+}
+.head-car-downmenu-pay{
+	height: 69px;
+	text-align: right;
+	padding-right: 9px;
+	color: #777777;
+	background: #f0f0f0;
+}
+.head-car-downmenu-pay input{
+	background: #d93600;
+	width: 124px;
+	height: 28px;
+	border-radius: 5px;
+	border: 0;
+	color: white;
+}
+.number{
+	color:red;
+	font-weight: 900;
+}
+/*----头部购物车结束---------*/
+/*-----------用户中心  我的订单  客户服务-------*/
+.head-nav-ccc{
+	text-align: center;
+	
+	background: url(../img/index/head-down.jpg) no-repeat 70px 2px;
+}
+.head-nav-ccc dd{
+	position: absolute;
+	top: 28px;
+	display: none;
+}
+.head-web-nav{
+	width: 100px;
+	height:28px;
+	text-align: center;
+	background: url(../img/index/head-web-nav.jpg) no-repeat 1px 5px;
+}
+.head-nav dd ul li a{
+	display: block;
+	width: 79px;
+	height:28px;
+}
+.head-nav dd ul li{
+	height:28px;
+	background: white;
+}
+
+
+/*--------头部广告------*/
+#message-wrap{
+	height: 70px;
+	background: #f3f3f3;
+	background: url(../img/index/hander.jpg) no-repeat center center;
+}
+#message-wrap a{
+	height: 70px;
+	width: 1200px;
+	margin: 0 auto;
+	display: block;
+}
+/*-----------导航栏----------*/
+.nav-wrap{
+	height:155px;
+	border-bottom: 2px solid #d4121b;
+}
+#nav{
+	padding-top: 20px;
+	height: 135px;
+}
+.nav-up{
+	width:100%;
+	height:90px;
+}
+#logo{
+	float: left;
+	width:272px;
+	height: 84px;
+	padding-top: 6px;
+}
+.nav-search{
+	float: left;
+	width:628px;
+	height:90px;
+}
+.search{
+	position: relative;
+	width:494px;
+	height:36px;
+	border: 3px solid #d93600;
+}
+.search-xia{
+	position: absolute;
+	top:39px;
+	left: -3px;
+	z-index: 50;
+	border: 3px solid red;
+	display: none;
+}
+.search-xia li{
+	height: 30px;
+	width: 416px;
+	border-top:0;
+	background: white;
+	line-height: 30px;
+	font-size: 14px;
+	color: 
+}
+.search-xia li a{
+	color: #222;
+}
+.search-xia li:hover{
+	background: #CDCDCD;
+}
+.searchtxt{
+	float: left;
+	width: 416px;
+	height: 36px;
+	border: 0;
+	padding: 0;
+}
+.searchbtn{
+	float: left;
+	width: 78px;
+	height: 36px;
+	border: 0;
+	padding: 0;
+	background: #d93600;
+	color: white;
+	font-weight: 900;
+	font-size: 15px;
+	text-align: center;
+	line-height: 36px;
+}
+.nav-search p{
+	margin-top: 5px;
+}
+.search-recommend{
+	color: red;
+}
+.nav-search p a{
+	margin-right: 12px;
+}
+.nav-need{
+	float: left;
+}
+.nav-need li{
+	float: left;
+	width: 75px;
+	margin-left: 25px;
+}
+.nav-need a{
+	float: left;
+}
+.nav-need-txt{
+	width:35px;
+	display:block;
+	text-align: center;
+}
+.nav-down{
+	position: relative;
+	width: 100%;
+	height: 45px;
+}
+.nav-down1{
+	position: relative;
+	width: 160px;
+	float: left;
+	height: 100%;
+	padding-left: 50px;
+	background: url(../img/index/nav-down1.jpg);
+	
+}
+.nav-down1 a{
+	color:white;
+	line-height: 46px;
+	font-size: 14px;
+	font-weight: 900;
+}
+.nav-nav{
+	float: left;
+	width:699px;
+	height: 100%;
+}
+.nav-nav li{
+	float: left;
+	
+	font-size: 16px;
+	line-height: 45px;
+	font-weight: 900;
+}
+.nav-nav li a{
+	color: #393333;
+	padding:14px 20px;
+}
+.nav-nav li a:hover{
+	color: #d4121b;
+}
+.nav-nav .nav-nav1 a{
+	color: #d4121b;
+}
+.nav-down .kao{
+	position: absolute;
+	right: 0;
+	top: -11px;
+}
+.nav-down img{
+	position:relative;
+	top: -12px
+}
+/*-------------------跨域隐藏选项*/
+
+
+
+
+
+
+/*-------------------底部---------------*/
+
+#footer{
+	position: relative;
+	padding-top: 13px;
+	height: 111px;
+	border-top: 1px solid #f2f2f2;
+}
+.footer-link{
+	color: #666666;
+	width: 1200px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+}
+.footer-link span a{
+	color: red;
+}
+.footer-link a:hover{
+	text-decoration: underline;
+}
+.huiding{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #666666;
+}
+#cxlogo{
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+}
+#cxlogo img{
+	display: inline-block;
+	height: 47px;
+	
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<link rel="stylesheet" href="/static/css/public.css" />
+		<link rel="stylesheet" href="/static/css/alone.css" />
+		<script src='/static/js/jquery-1.12.4.js'></script>
+		<script src='/static/js/jquery.cookie.js'></script>
+		<script src='/static/js/zhuce.js'></script>
+	</head>
+	<body>
+		<div class="login-tit-wrap">
+			<a href='javascript:;'></a>
+		</div>
+		<div class="zhuce-main">
+			<div class="zhuce-logo">
+				<a id="zhucelogo" href="/static/index.html"><img src="/static/img/index/logo.png" alt="米米乐" title="米米乐"/></a>
+				<h3>欢迎注册</h3>
+				<p>已注册,请  <a href="/users/login/">登录></a></p>
+			</div>
+			<div class="zhuce">
+				<div class="zhuce-tit">
+					<h3>个人用户注册</h3>
+				</div>
+				<div class="zhuce-list">
+					<form action="{% url 'users:register' %}" method="post">
+						{% csrf_token %}
+						<input type="text" placeholder="用户昵称:" name="nickname"class='phonenumber'/>
+						<input type="text" placeholder="用户账号:" value='' class='phonenumber' name="username"/>
+						<input type="password" placeholder="设置密码"name="password" value='' class='pw'/>
+						<span class= 'pw-show'>*只能由数字、文字或下划线组成6~16位</span>
+						<span class= 'pw-tip'>*只能由数字、文字或下划线组成6~16位</span>
+						<input type="password" placeholder="确认密码"name="confirmpwd" value='' class='pw'/>
+						<span class= 'pw-show'>*只能由数字、文字或下划线组成6~16位</span>
+						<span class= 'pw-tip'>*只能由数字、文字或下划线组成6~16位</span>
+
+						<input type="submit" class="postmassage1" value="立即注册">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<p class='footer-link'>
+				<a href="javascript:;">电脑节</a> | <a href="javascript:;">年货节</a> | <a href="javascript:;">批发商城</a> |
+				<a href="javascript:;"> 合作及洽谈</a> | <a href="javascript:;"> 联系我们</a> | <a href="javascript:;">关于米米乐商城</a> |
+				<a href="javascript:;">  商家登录</a> | <a href="javascript:;">开店协议</a> | <a href="javascript:;">商家入驻</a> |
+				<a href="javascript:;">手机版</a> | <a href="javascript:;">友情链接</a> | <span><a href="javascript:;">招聘英才</a> | </span>
+				<a href="javascript:;">米商</a> | <a href="javascript:;">8.8包邮</a><br />
+				<span> &copy; 2016 米米乐商城 www.mmloo.com 版权所有 蜀ICP备06015925号-1</span>
+			</p>
+			<div class="huiding"><a href="javascript:;">返回顶部▲</a></div>
+			<div id="cxlogo"><img src="/static/img/index/cxlogo.png" alt="" /></div>
+		</div>
+	</body>
+</html>

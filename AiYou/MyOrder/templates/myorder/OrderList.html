@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}
+个人中心-历史订单 – 我要的，才是必要的 – 必要biyao.com
+{% endblock %}
+{% load static %}
+{% block head %}
+<link type="text/css" href="{% static 'pc/www/css/myCenter.css' %}"
+      rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+<div class="wrap  posR mg_t20 mH810 pd_b40">
+    <div class="per_left">
+        <div class="per_leftbox  pd_t14">
+            <ul class="per_leftul">
+                <li class="t_c">
+                    <a href="Profile.html">
+
+                        <img src="/{{user.users.header}}" alt=""
+                             onerror="javascript:this.src='pc/www/img/avatar/head_150.png'"
+                             style="width: 150px; height: 150px"/>
+                    </a>
+                </li>
+                <li class="f14 col_fff mg_t10 t_c">{{user.users.mickname}}</li>
+            </ul>
+        </div>
+        <div class="per_leftbox">
+            <div class="perleft_menu pdtb_20">
+                <ul>
+                    <li class="a_check "><a href="{% url 'myorder:orderlist' %}"><i class="f_r mcMIcon3 inline"></i>我的订单</a></li>
+                    <li class=" "><a><i class="f_r mcMIcon4 inline"></i>退款管理</a></li>
+                    <!--<li class=" "><a href="/MyCenter/MyIncomeRules.html" ><i class="f_r mcMIcon5 inline"></i>我的收益</a></li>-->
+                    <li class=" "><a href="{% url 'users:u_message' %}"><i class="f_r mcMIcon8 inline"></i>个人设置</a></li>
+                    <li class=" "><a href="{% url 'store:my_store' %}"><i class="f_r mcMIcon8 inline"></i>我的店铺</a></li>
+                    <!-- <div class="div_line"></div> -->
+                    <!-- <a href="#"><i class="f_r mcMIcon9 inline"></i>设计师主页</a> <a
+                        href="#"><i class="f_r mcMIcon10 inline"></i>设计师提现</a> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="per_right_out backg_fff mg_b20 ">
+        <div class="per_right ">
+            <div >
+                <div class="relative">
+                    <h4 class="nTitle">我的订单</h4>
+                </div>
+                <table cellspacing="0" cellpadding="0" class="w100w t_c  perTabTitn ">
+                    <tbody>
+                    <tr>
+                        <td width="32%"><span class="inline">商品</span></td>
+                        <td width="14%"><span class="inline">售后</span></td>
+                        <td width="18%"><span class="inline">合计</span></td>
+                        <td width="18%"><span class="inline">状态</span></td>
+                        <td width="18%"><span class="inline">操作</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="J_table_wrap">
+
+                    <div class="order_title clearfix  ">
+					<span class="f_l col_666">
+					 <span class="col_b2b2b2">2016-08-05 &nbsp;&nbsp;</span>
+					 <label> 订单编号：122007043946180978</label>
+					</span><span class="f_r">&nbsp;&nbsp;
+					<script>
+                        var suppliedIdForIm = 'supplier_'+"130091";
+                    </script>
+				<!--暂时关闭IM入口，勿删-->
+					<a>
+                        <span class="inline">商家：</span>
+                        <span id="J_product_name " class="inline col_666">***</span>
+                    </a>
+					</span>
+                    </div>
+                    <div class="mg_b20">
+                        <table cellspacing="0" cellpadding="0" class="sop_table4 border ">
+                            <tbody>
+                            {% for i in orders %}
+                            {% for j in i.orderitem_set.all %}
+                            <tr data-unfacceptance="0"
+                                data-supplierid="130091"
+                                data-orderid="122007043946180978">
+                                <td width="46%" class="bd_r J_popup_parent">
+                                    <table width="100%" height="100px" cellspacing="0"
+                                           cellpadding="0">
+                                        <tbody>
+                                        <tr>
+                                            <td name="detail_td">
+
+                                                <a class="perCmImg inline mg_l10" target="_blank" href="/products/1300910000000030000-0.html#editor">
+                                                    <img alt="" src="/{{j.oi_goods_image_path}}">
+                                                </a>
+                                                <div class="inline mg_l10 vTop mg_t5 lineH20 w190">
+                                                    <a class="col_666" href="/products/1300910000000030000-0.html#editor" target="_blank">
+                                                        <span class="col_666">{{j.oi_goods_name}}</span>
+                                                    </a><br>
+                                                    <span class=" col_999">规格:标配<br/>签名:无</span>
+                                                    <div class="refund_tips"></div>
+                                                </div>
+                                            </td>
+                                            <td width="30%" class="bd_l t_c vTop pd_t15 lineH20">
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td width="18%" align="center" class="bd_l vTop pd_t15 lineH20"><strong
+                                        class="col_f60 f14">￥{{j.deal_price}}</strong>
+                                    <br> <span>（运费：￥0）</span>
+                                </td>
+                                <td width="18%" align="center" class="bd_l vTop pd_t15 lineH20">
+                                    <span class="col_f60">待付款</span>
+                                    <br>
+
+                                    <a class="col_link ">订单详情</a>
+                                    <br />
+
+                                    <span onmouseenter="addwl(this)" onmouseleave="$(this).find('.c_wl_w').fadeOut()" class="relative col_link" orderStatus="1" orderId ="122007043946180978" order="">订单跟踪
+                                    	<div class="c_wl_w">
+                                            <div class="wl_jd"></div>
+                                            <div class="c_wl_n">
+                                                <div class="col_666">
+                                                    <span class="c_wl_t"><b>订单跟踪</b> </span>
+                                                </div>
+                                                <div class="wl_dl_w_p"></div>
+                                                <div class="wl_dl_w col_666"></div>
+
+                                                <div class="c_wl_f none">
+                                                    <span class="col_666">以上为最新信息&nbsp;&nbsp;,&nbsp;&nbsp;</span><a href="MyOrderDetail.html" class="col_link ">查看全部>></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </td>
+                                <td width="18%" align="center"
+                                    class="bd_l vTop  pd_l20 pd_r20 pd_t5">
+                                    <a href="{% url 'myorder:myorder' j.id %}" class="publicBtn publicBtn_h25 publicBtn_f60 inline mg_t10">立即付款</a><br />
+                                    <a href="{% url 'myorder:del_order' j.id %}" class=" cancelOrder  mg_t10 inline" orderid="122007043946180978">取消订单</a>
+                                    <br />
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="DZPager mg_b20"></div>
+            </div>
+            <input type="hidden" id="storedesc" title="" />
+        </div>
+    </div>
+</div>
+{% endblock %}

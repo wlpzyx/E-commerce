@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}
+个人中心-历史订单 – 我要的，才是必要的 – 必要biyao.com
+{% endblock %}
+{% load static %}
+{% block head %}
+<link type="text/css" href="{% static 'pc/www/css/myCenter.css' %}"
+      rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+<div class="wrap  posR mg_t20 mH810 pd_b40">
+    <div class="per_left">
+        <div class="per_leftbox  pd_t14">
+            <ul class="per_leftul">
+                <li class="t_c">
+                    <a href="Profile.html">
+
+                        <img src="/{{user.users.header}}" alt=""
+                             onerror="javascript:this.src='pc/www/img/avatar/head_150.png'"
+                             style="width: 150px; height: 150px"/>
+                    </a>
+                </li>
+                <li class="f14 col_fff mg_t10 t_c">{{user.users.mickname}}</li>
+            </ul>
+        </div>
+        <div class="per_leftbox">
+            <div class="perleft_menu pdtb_20">
+                <ul>
+                    <li class="a_check "><a href="{% url 'myorder:orderlist' %}"><i class="f_r mcMIcon3 inline"></i>我的订单</a></li>
+                    <li class=" "><a><i class="f_r mcMIcon4 inline"></i>退款管理</a></li>
+                    <!--<li class=" "><a href="/MyCenter/MyIncomeRules.html" ><i class="f_r mcMIcon5 inline"></i>我的收益</a></li>-->
+                    <li class=" "><a href="{% url 'users:u_message' %}"><i class="f_r mcMIcon8 inline"></i>个人设置</a></li>
+                    <li class=" "><a href="{% url 'store:my_store' %}"><i class="f_r mcMIcon8 inline"></i>我的店铺</a></li>
+                    <!-- <div class="div_line"></div> -->
+                    <!-- <a href="#"><i class="f_r mcMIcon9 inline"></i>设计师主页</a> <a
+                        href="#"><i class="f_r mcMIcon10 inline"></i>设计师提现</a> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="per_right_out backg_fff mg_b20 ">
+        <div class="per_right ">
+            <div >
+                <h4 class="nTitle">历史订单</h4>
+
+                <span class="f14 col_666 pd_t20 inline">您暂时没有订单。</span>
+                <div class="DZPager mg_b20"></div>
+            </div>
+            <input type="hidden" id="storedesc" title="" />
+        </div>
+    </div>
+</div>
+{% endblock %}

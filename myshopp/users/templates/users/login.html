@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录</title>
+		<link rel="stylesheet" href="/static/css/public.css" />
+		<link rel="stylesheet" href="/static/css/alone.css" />
+		<script src='static/js/jquery-1.12.4.js'></script>
+		<script src='static/js/jquery.cookie.js'></script>
+		<script src='static/js/denglu.js'></script>
+	</head>
+	<body>
+		<div class="login-tit-wrap">
+			<a href='javascript:;'></a>
+		</div>
+		<div class="login-main">
+			<div class="login-logo">
+				<a href="/static/index.html"><img src="/static/img/index/logo.png" alt="米米乐" title="米米乐"/></a>
+			</div>
+			<div class="login-login">
+				<div class="login-login-right">
+					<h2>用户登录</h2>
+					<form action="{% url 'users:user_login' %}"method="post" name='login-login'>
+						{% csrf_token %}
+						<img class='login1' src="/static/img/register/username.jpg"/><input type="text" name="username" id="username" value="" placeholder="会员名/邮箱"/>
+						<input type="hidden" name="next" value="{{next_url}}">
+						<img class='login2' src="/static/img/register/code.jpg"/><input type="password" name="password" id='code' /><br><br>
+						<img src="/users/createImage/" alt="图片有问题！" onclick="refresh_check_code(this)" style="position: absolute;left: 70px;top: 104px;border: 1px solid #cdcdcd;border-right: 0;width: 40px;height: 32px;"><input type="text" style="position: absolute;left: 111px;top: 104px;width: 238px;height: 30px;border: 1px solid #cdcdcd;border-left: 0;" placeholder="请输入验证码" name="ewm"/>
+
+						<br/><input type="submit" id='login'value="用户登录">
+						<a href="javascript:;">忘记密码？</a>
+
+					</form>
+					<p class='login-login-form-bottom'>还不是本站会员？立即</p>
+					<div><a href="/users/register/" style="text-decoration: none;">注册</a></div>
+					<p class='login-login-bottom'>您还可以用合作伙伴账号登录</p>
+					<ul class='login-login-bottom1'>
+						<li class='login-login-bottom11'></li>
+						<li class='login-login-bottom12'></li>
+						<li class='login-login-bottom13'></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<p class='footer-link'>
+				<a href="javascript:;">电脑节</a> | <a href="javascript:;">年货节</a> | <a href="javascript:;">批发商城</a> |
+				<a href="javascript:;"> 合作及洽谈</a> | <a href="javascript:;"> 联系我们</a> | <a href="javascript:;">关于米米乐商城</a> |
+				<a href="javascript:;">  商家登录</a> | <a href="javascript:;">开店协议</a> | <a href="javascript:;">商家入驻</a> |
+				<a href="javascript:;">手机版</a> | <a href="javascript:;">友情链接</a> | <span><a href="javascript:;">招聘英才</a> | </span>
+				<a href="javascript:;">米商</a> | <a href="javascript:;">8.8包邮</a><br />
+				<span> &copy; 2016 米米乐商城 www.mmloo.com 版权所有 蜀ICP备06015925号-1</span>
+			</p>
+			<div class="huiding"><a href="javascript:;">返回顶部▲</a></div>
+			<div id="cxlogo"><img src="/static/img/index/cxlogo.png" alt="" /></div>
+		</div>
+	<script>
+			 function refresh_check_code(node) {
+				 // src 后面加问号会自动刷新验证码 img 的 src
+				// get 请求方式缓存处理
+				 node.src = '/users/createImage/?search=' + Math.random();
+			 }
+	</script>
+	</body>
+</html>
